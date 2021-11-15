@@ -34,7 +34,7 @@ public class AddTwoNumsAsList {
 	public Node addTwoLists(Node L1, Node L2, Node L3) {
 		Node sum = L3;
 		int carry = 0;
-		while(L1!=null && L2!=null) {
+		while(L1!=null || L2!=null) {
 			int num1 = L1.data;
 			int num2 = L2.data;
 			int num3 = num1 + num2 + carry;
@@ -49,7 +49,9 @@ public class AddTwoNumsAsList {
 			Node temp = new Node(val);
 			L3.next = temp;
 			L3 = L3.next;
+			if(L1!=null)
 			L1 = L1.next;
+			if(L2!=null)
 			L2 = L2.next;
 			
 		}
